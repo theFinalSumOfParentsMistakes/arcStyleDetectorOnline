@@ -12,13 +12,13 @@ import os
 def image_upload(request):
     context = dict()
     if request.method == 'POST':
-        path = request.POST["src"]
-        image = NamedTemporaryFile()
-        image.write(urlopen(path).read())
-        image.flush()
-        image = File(image)
-        obj = myImage.objects.create(image=image)
-        obj.save()
+        # path = request.POST["src"]
+        # image = NamedTemporaryFile()
+        # image.write(urlopen(path).read())
+        # image.flush()
+        # image = File(image)
+        # obj = myImage.objects.create(image=image)
+        # obj.save()
         #
         # path = request.POST["src"]  # src is the name of input attribute in your html file, this src value is set in javascript code
         # image = NamedTemporaryFile()
