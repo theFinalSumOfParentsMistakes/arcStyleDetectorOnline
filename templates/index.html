@@ -12,7 +12,7 @@
     <body>
         <div class="contentarea">
             <div class="Input">
-                <form method="POST" name="inputForm" enctype='multipart/form-data'>
+                <form method="POST" name="inputForm" action="/result/" enctype='multipart/form-data'>
                     {% csrf_token %}
                     <div id="camera" class="camera">
                         <video id="video">Video stream not available.</video>
@@ -26,7 +26,7 @@
                         <img id="photo" alt="your image">
                     </div>
                     <br>
-                    <button type="submit" class="button" id="submit">Submit</button>
+                    <button type="submit" class="button" id="submit" >Submit</button>
                 </form>
             </div>
            <img src="{{ path }}" alt="The screen capture will appear in this box.">

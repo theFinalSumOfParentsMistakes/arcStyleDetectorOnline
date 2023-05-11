@@ -1,5 +1,5 @@
 """
-URL configuration for myDiplomaSite project.
+URL configuration for djangoProject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -18,9 +18,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 import interface.views as views
-import myDiplomaSite.settings as settings
+import djangoProject.settings as settings
 
 urlpatterns = [
     path('admin', admin.site.urls),
     path('', views.image_upload, name='image_upload'),
+    path('result', views.show_result, name='show_result')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
