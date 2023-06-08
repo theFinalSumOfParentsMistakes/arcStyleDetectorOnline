@@ -4,11 +4,28 @@
     {% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>fbdbfb</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
+    <title>Стиль здания</title>
 </head>
 <body>
-<img src="{% static "/Russian_Revival_25.jpg" %}" alt="Italian Trulli">
+<p>Cтиль: {{ style }} </p>
+<img src="{% static "/test.jpg" %}" alt="Italian Trulli" width="200" height="200">
+
+<br>
+<p>Похожие изображения:</p>
+
+
+<div class="images ">
+{% for item in images %}
+<img src="{% static item %}" alt="Italian Trulli" width="90" height="90">
+
+{% endfor %}
+</div>
+
+
 </body>
-    </body>
     {% endblock %}
 </html>

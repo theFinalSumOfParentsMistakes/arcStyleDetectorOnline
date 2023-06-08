@@ -1,30 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  padding: 0;
+  margin: 0 ;
+  box-sizing: border: box;
+}
+
+body {
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+  background-attachment: fixed;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: minmax(150px, 440px);
+  font-family: 'Montserrat', sans-serif;
+}
+
+#wrapper {
+  text-align: center;
+  padding: 20px;
+}
+
+#title {
+  margin-bottom: 20px;
+}
+
+img {
+  border: 5px solid white;
+  border-radius: 5px;
+
+}
+
+blockquote {
+  border-left: 5px solid white;
+  padding-left: 20px;
+}
+
+
 #video {
-  border: 1px solid black;
-  box-shadow: 2px 2px 3px black;
-  width:320px;
-  height:240px;
+  border: 5px solid white;
+  border-radius: 5px;
 }
 
 #photo {
-  border: 1px solid black;
-  box-shadow: 2px 2px 3px black;
-  width:320px;
-  height:240px;
+  border: 5px solid white;
+  border-radius: 5px;
 }
 
 #canvas {
   display:none;
 }
 
-.camera {
-  width: 340px;
-  display:inline-block;
+#camera {
+  border: 5px solid white;
+  border-radius: 5px;
 }
 
-.output {
-  width: 340px;
-  display:inline-block;
+
+
+
+.button {
+  display:block;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  min-width: 70px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 3px;
+  background: #4676d7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
 }
+
+.button:hover {
+  background: #1d49aa;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
+
+
+
 
 #startbutton {
   display:block;
@@ -32,16 +95,24 @@
   margin-left:auto;
   margin-right:auto;
   bottom:32px;
-  background-color: rgba(0, 150, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
-  font-size: 14px;
-  font-family: "Lucida Grande", "Arial", sans-serif;
-  color: rgba(255, 255, 255, 1.0);
+  min-width: 70px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 3px;
+  background: #4676d7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.contentarea {
-  font-size: 16px;
-  font-family: "Lucida Grande", "Arial", sans-serif;
-  width: 760px;
+#startbutton:hover {
+  background: #1d49aa;
 }
+
+#startbutton:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
+

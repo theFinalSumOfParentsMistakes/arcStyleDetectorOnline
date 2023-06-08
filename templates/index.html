@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-    {% block content %}
+{% block content %}
     {% load static %}
     <head>
         <title>VisionApp</title>
@@ -10,27 +10,31 @@
         <script type="module" src="{% static 'js/index.js' %}"></script>
     </head>
     <body>
-        <div class="contentarea">
-            <div class="Input">
-                <form method="POST" name="inputForm" enctype='multipart/form-data'>
-                    {% csrf_token %}
-                    <div id="camera" class="camera">
-                        <video id="video">Video stream not available.</video>
-                        <button id="startbutton" type="button">Take photo</button>
-                        <input id="webimg" value="" name="src" type="text" style="display: none;">
-                        <canvas id="canvas">
-                        </canvas>
-                    </div>
-                    <br>
-                    <div>
-                        <img id="photo" alt="your image">
-                    </div>
-                    <br>
-                    <button type="submit" class="button" id="submit" >Submit</button>
-                </form>
-            </div>
-           <img src="{{ path }}" alt="The screen capture will appear in this box.">
+    <div class="contentarea">
+        <div class="Input">
+            <form method="POST" name="inputForm" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <div id="camera" class="camera">
+                    <video id="video">Video stream not available.</video>
+                    <button id="startbutton" type="button">Take photo</button>
+                    <input id="webimg" value="" name="src" type="text" style="display: none;">
+                    <canvas id="canvas">
+                    </canvas>
+                </div>
+                <br>
+                <div>
+                    <img id="photo" alt="your image">
+                </div>
+                <br>
+                <script>
+                          document.getElementById('webimg').value = canvas.toDataURL('image/png');
+                          console.log(document.getElementById('webimg').value)
+                </script>
+                <button type="submit" class="button" id="submit">Submit</button>
+            </form>
         </div>
+        <img src="{{ path }}" alt="The screen capture will appear in this box.">
+    </div>
     </body>
-    {% endblock %}
+{% endblock %}
 </html>

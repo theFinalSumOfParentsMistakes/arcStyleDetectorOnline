@@ -45,25 +45,33 @@ def levinshtein_distance(source_str, target_str):
     return distance
 
 
-def model(test_object, dataset_learn: pd.DataFrame, k):
-    dataset_learn['distance'] = dataset_learn["array"].apply(lambda x: levinshtein_distance(test_object, x))
-    sorted_data = dataset_learn.sort_values(['distance'])
+
+
+
+
+def model(test_object, k):
+    size_div_2 = 250
+    image = test_object.convert('L')
+    image_center = (image.size[0] // 2, image.size[1] // 2)
+    crop_1 = (image_center[0] - size_div_2, image_center[1] - size_div_2, image_center[0] + size_div_2, image_center[1] + size_div_2)
+    image = image.crop(crop_1)
+    img_array = compare_halves(matrix_to_array(image), current_depth=0, max_depth=12)
+    data = pd.read_csv('./interface/static/database.csv', sep=';')
+    data['distance'] = data["array"].apply(lambda x: levinshtein_distance(img_array, x))
+    sorted_data = data.sort_values(['distance'])
     style = sorted_data[:k].groupby('style').count().sort_values(['distance'], ascending=False).index[0]
-    return style, sorted_data[:5]
+    imgs = sorted_data["path"][:8].apply(lambda s: 'files/data/'+s[9:])
+    return style, imgs.tolist()
 
+#
+# s = './data_d/Russian Revival/Russian_Revival_19.jpg'
+#
+# print('files/data/'+s[9:])
 
-
-img = Image.open('./static/Russian_Revival_25.jpg')
-img_array = compare_halves(matrix_to_array(img), current_depth=0, max_depth=12)
-data = pd.read_csv('./static/database.csv', sep=';')
-print(model(img_array, data, 2)[0])
-top = model(img_array, data, 2)[1]
-l = 4
-
-fig = plt.figure(figsize=(30, 30))
-for x in range(2):
-    for i in range(l):
-        ax = fig.add_subplot(10, l, i+1)
-        plt.imshow(Image.open(f'./static/files/data{(list(top.path)[i])[8:]}'), cmap='gray')
-        plt.title(list(top['style'])[i])
-
+# fig = plt.figure(figsize=(30, 30))
+# for x in range(2):
+#     for i in range(l):
+#         ax = fig.add_subplot(10, l, i+1)
+#         plt.imshow(Image.open(list(top.path)[i]), cmap='gray')
+#         plt.title(list(top['style'])[i])
+#
