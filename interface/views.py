@@ -16,6 +16,7 @@ def image_upload(request):
         image_path = request.POST["src"]  # src is the name of input attribute in your html file, this src value is set in javascript code
         with open('/Users/d.s.zubov/Desktop/Курсовая/djangoProject/interface/static/imageBase64.txt', 'w') as f:
             f.write(image_path)
+        print('1')
         with open("/Users/d.s.zubov/Desktop/Курсовая/djangoProject/interface/static/test.jpg", "wb") as binary_file:
             # Write bytes to file
             binary_file.write(urlopen(image_path).read())
