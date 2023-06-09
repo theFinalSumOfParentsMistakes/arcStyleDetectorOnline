@@ -27,13 +27,15 @@
                 </div>
                 <br>
                 <script>
-                          document.getElementById('webimg').value = canvas.toDataURL('image/png');
+                    function f() {
+                        document.getElementById('webimg').value = canvas.toDataURL('image/png');
                           console.log(document.getElementById('webimg').value)
+                    }
+
                 </script>
-                <button type="submit" class="button" id="submit">Submit</button>
+                <button type="submit" class="button" id="submit" onclick="f()">Submit</button>
             </form>
         </div>
-        <img src="{{ path }}" alt="The screen capture will appear in this box.">
     </div>
     </body>
 {% endblock %}

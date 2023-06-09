@@ -46,21 +46,18 @@ def levinshtein_distance(source_str, target_str):
 
 
 
-
-
-
-def model(test_object, k):
-    size_div_2 = 250
+def model(test_object):
+    size_div_2 = 200
     image = test_object.convert('L')
     image_center = (image.size[0] // 2, image.size[1] // 2)
     crop_1 = (image_center[0] - size_div_2, image_center[1] - size_div_2, image_center[0] + size_div_2, image_center[1] + size_div_2)
     image = image.crop(crop_1)
-    img_array = compare_halves(matrix_to_array(image), current_depth=0, max_depth=12)
-    data = pd.read_csv('./interface/static/database.csv', sep=';')
+    img_array = compare_halves(matrix_to_array(image), current_depth=0, max_depth=9)
+    data = pd.read_csv('./interface/static/database_learn_100_8.csv', sep=';')
     data['distance'] = data["array"].apply(lambda x: levinshtein_distance(img_array, x))
     sorted_data = data.sort_values(['distance'])
-    style = sorted_data[:k].groupby('style').count().sort_values(['distance'], ascending=False).index[0]
-    imgs = sorted_data["path"][:8].apply(lambda s: 'files/data/'+s[9:])
+    style = sorted_data[:50].groupby('style').count().sort_values(['distance'], ascending=False).index[0]
+    imgs = sorted_data["path"][:10].apply(lambda s: 'files/'+s[9:])
     return style, imgs.tolist()
 
 #

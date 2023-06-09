@@ -14,19 +14,24 @@ def image_upload(request):
     context = dict()
     if request.method == 'POST':
         image_path = request.POST["src"]  # src is the name of input attribute in your html file, this src value is set in javascript code
-        a = urlopen(image_path).read()
-        img = Image.frombytes('RGB', (200, 00), data,
-                              decoder_name='raw', *args)
+        with open('/Users/d.s.zubov/Desktop/Курсовая/djangoProject/interface/static/imageBase64.txt', 'w') as f:
+            f.write(image_path)
+        with open("/Users/d.s.zubov/Desktop/Курсовая/djangoProject/interface/static/test.jpg", "wb") as binary_file:
+            # Write bytes to file
+            binary_file.write(urlopen(image_path).read())
+        pred = model(Image.open('/Users/d.s.zubov/Desktop/Курсовая/djangoProject/interface/static/test.jpg'))
+        context['style'] = pred[0]
+        context['images'] = pred[1]
         # image = NamedTemporaryFile()
-        # image.write()
+        # image.write(urlopen(image_path).read())
         # image.flush()
-        # a = File(image)
-        # a.sa
-        # #.write('/Users/d.s.zubov/Desktop/Курсовая/djangoProject/interface/static/test1.jpg')
-        # print(type())
+        # image = File(image)
         # name = str(image.name).split('\\')[-1]
         # name += '.jpg'  # store image in jpeg format
         # image.name = name
+        # if image is not None:
+        #     obj = myImage.objects.create(image=image)  # create a object of Image type defined in your model
+        #     obj.save()
         return render(request, 'result.html', context=context)
     return render(request, 'index.html', context=context)  # context is like respose data we are sending back to user, that will be rendered with specified 'html file'.
 
