@@ -3,11 +3,10 @@
 * {
   padding: 0;
   margin: 0 ;
-  box-sizing: border: box;
 }
 
 body {
-  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+  background-image: url("https://marquette.macfound.org/img/home_building.png"), linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
   background-attachment: fixed;
   height: 100vh;
   display: grid;
@@ -29,7 +28,9 @@ body {
 img {
   border: 5px solid white;
   border-radius: 5px;
-
+  width:100%;
+  display: flex;
+  justify-content: center;
 }
 
 blockquote {
@@ -39,13 +40,16 @@ blockquote {
 
 
 #video {
-  border: 5px solid white;
+  border: 3px solid white;
   border-radius: 5px;
 }
 
 #photo {
-  border: 5px solid white;
+  border: 3px solid white;
   border-radius: 5px;
+  width:100%;
+  display: flex;
+  justify-content: center;
 }
 
 #canvas {
@@ -53,15 +57,15 @@ blockquote {
 }
 
 #camera {
-  border: 5px solid white;
-  border-radius: 5px;
+  width:100%;
+  display: flex;
+  justify-content: center;
 }
 
-
-
-
 .button {
-  display:block;
+  width:100%;
+  display: flex;
+  justify-content: center;
   position:relative;
   margin-left:auto;
   margin-right:auto;
@@ -79,6 +83,9 @@ blockquote {
 
 .button:hover {
   background: #1d49aa;
+    width:100%;
+  display: flex;
+  justify-content: center;
 }
 
 .button:focus {
@@ -86,11 +93,10 @@ blockquote {
   box-shadow: 0 0 0 4px #cbd6ee;
 }
 
-
-
-
 #startbutton {
-  display:block;
+  width:100%;
+  display: flex;
+  justify-content: center;
   position:relative;
   margin-left:auto;
   margin-right:auto;

@@ -20,7 +20,7 @@ def image_upload(request):
         with open("/Users/d.s.zubov/Desktop/Курсовая/djangoProject/interface/static/test.jpg", "wb") as binary_file:
             # Write bytes to file
             binary_file.write(urlopen(image_path).read())
-        pred = model(Image.open('/Users/d.s.zubov/Desktop/Курсовая/djangoProject/interface/static/test.jpg'))
+        pred = model()
         context['style'] = pred[0]
         context['images'] = pred[1]
         # image = NamedTemporaryFile()

@@ -46,7 +46,8 @@ def levinshtein_distance(source_str, target_str):
 
 
 
-def model(test_object):
+def model():
+    test_object = Image.open('/Users/d.s.zubov/Desktop/Курсовая/djangoProject/interface/static/test.jpg')
     size_div_2 = 200
     image = test_object.convert('L')
     image_center = (image.size[0] // 2, image.size[1] // 2)
@@ -54,10 +55,18 @@ def model(test_object):
     image = image.crop(crop_1)
     img_array = compare_halves(matrix_to_array(image), current_depth=0, max_depth=11)
     data = pd.read_csv('./interface/static/database_learn_200_11.csv', sep=';')
-    data['distance'] = data["array"].apply(lambda x: levinshtein_distance(img_array, x))
-    sorted_data = data.sort_values(['distance'])
-    style = sorted_data[:100].groupby('style').count().sort_values(['distance'], ascending=False).index[0]
-    imgs = sorted_data["path"][:10].apply(lambda s: 'files/'+s[9:])
+
+    data['distance'] = data['array'].apply(
+        lambda x: int(levinshtein_distance(str(img_array), str(x))))
+    dataset_learn_sorted = data.sort_values(by='distance')
+    dataset_learn_sorted_grouped = dataset_learn_sorted[:20].groupby('style').count().sort_values(by='distance',
+                                                                                                 ascending=False)
+    style = dataset_learn_sorted_grouped.index[0]
+
+    # data['distance'] = data["array"].apply(lambda x: levinshtein_distance(img_array, x))
+    # sorted_data = data.sort_values(['distance'])
+    # style = sorted_data[:50].groupby('style').count().sort_values(['distance'], ascending=False).index[0]
+    imgs = dataset_learn_sorted["path"][:10].apply(lambda s: 'files/'+s[9:])
     return style, imgs.tolist()
 
 #
