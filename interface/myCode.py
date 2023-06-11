@@ -66,7 +66,7 @@ def model():
     # data['distance'] = data["array"].apply(lambda x: levinshtein_distance(img_array, x))
     # sorted_data = data.sort_values(['distance'])
     # style = sorted_data[:50].groupby('style').count().sort_values(['distance'], ascending=False).index[0]
-    imgs = dataset_learn_sorted["path"][:10].apply(lambda s: 'files/'+s[9:])
+    imgs = dataset_learn_sorted["path"][:12].apply(lambda s: 'files/'+s[9:])
     return style, imgs.tolist()
 
 #

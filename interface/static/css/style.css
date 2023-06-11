@@ -1,124 +1,109 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
-  padding: 0;
-  margin: 0 ;
+    padding: 0;
+    margin: 0;
+    box-sizing: border: box;
 }
 
 body {
-  background-image: url("https://marquette.macfound.org/img/home_building.png"), linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
-  background-attachment: fixed;
-  height: 100vh;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: minmax(150px, 440px);
-  font-family: 'Montserrat', sans-serif;
+    background-image: url("https://marquette.macfound.org/img/home_building.png"), linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    background-attachment: fixed;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: minmax(150px, 440px);
+    font-family: 'Montserrat', sans-serif;
 }
 
 #wrapper {
-  text-align: center;
-  padding: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
 #title {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 img {
-  border: 5px solid white;
-  border-radius: 5px;
-  width:100%;
-  display: flex;
-  justify-content: center;
+    border: 5px solid white;
+    border-radius: 5px;
+
 }
 
 blockquote {
-  border-left: 5px solid white;
-  padding-left: 20px;
+    border-left: 5px solid white;
+    padding-left: 20px;
 }
 
 
 #video {
-  border: 3px solid white;
-  border-radius: 5px;
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
 }
 
 #photo {
-  border: 3px solid white;
-  border-radius: 5px;
-  width:100%;
-  display: flex;
-  justify-content: center;
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    height: 100%
 }
 
 #canvas {
-  display:none;
-}
-
-#camera {
-  width:100%;
-  display: flex;
-  justify-content: center;
+    display: none;
 }
 
 .button {
-  width:100%;
-  display: flex;
-  justify-content: center;
-  position:relative;
-  margin-left:auto;
-  margin-right:auto;
-  min-width: 70px;
-  font-family: inherit;
-  appearance: none;
-  border: 0;
-  border-radius: 3px;
-  background: #4676d7;
-  color: #fff;
-  padding: 8px 16px;
-  font-size: 1rem;
-  cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 70px;
+    font-family: inherit;
+    appearance: none;
+    border: 0;
+    border-radius: 3px;
+    background: #4676d7;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .button:hover {
-  background: #1d49aa;
-    width:100%;
-  display: flex;
-  justify-content: center;
+    background: #1d49aa;
 }
 
 .button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px #cbd6ee;
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
 }
 
 #startbutton {
-  width:100%;
-  display: flex;
-  justify-content: center;
-  position:relative;
-  margin-left:auto;
-  margin-right:auto;
-  bottom:32px;
-  min-width: 70px;
-  font-family: inherit;
-  appearance: none;
-  border: 0;
-  border-radius: 3px;
-  background: #4676d7;
-  color: #fff;
-  padding: 8px 16px;
-  font-size: 1rem;
-  cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 32px;
+    font-family: inherit;
+    appearance: none;
+    border: 0;
+    border-radius: 3px;
+    background: #4676d7;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 #startbutton:hover {
-  background: #1d49aa;
+    background: #1d49aa;
 }
 
 #startbutton:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px #cbd6ee;
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
 }
 
