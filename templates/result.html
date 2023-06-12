@@ -11,16 +11,28 @@
         <title>ArcClassificator</title>
     </head>
     <body>
-    <p id="text">Style: {{ style }} </p>
-    <img src="{% static "/taked_photo.jpg" %}" alt="Italian Trulli">
+    <div id='result_taked_photo'>
+        <img src="{% static "/taked_photo.jpg" %}"  alt="Italian Trulli">
+    </div>
     <br>
-    <p id="text" >Похожие изображения:</p>
-    <div class="images ">
+    <br>
+    <p id="text">
+        It's: {{ style }} <br>
+        Similarity images:
+    </p>
+    <div class="images">
         {% for item in images %}
             <img src="{% static item %}" alt="Italian Trulli" width="90" height="90">
 
         {% endfor %}
     </div>
+    <br>
+    <br>
+    <br>
+    <div id="promo">
+        <img src="{% static "/promo.jpg" %}" id="promo" alt="Italian Trulli" width="auto" height="100">
+    </div>
+
     </body>
 {% endblock %}
 </html>

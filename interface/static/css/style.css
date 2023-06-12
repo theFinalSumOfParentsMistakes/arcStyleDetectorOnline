@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 
 * {
     padding: 0;
@@ -6,8 +6,7 @@
 }
 
 body {
-    background-image: url("https://psv4.userapi.com/c909618/u279511858/docs/d51/efa71b5ce8cd/background.png"), linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
-    background-attachment: fixed;
+    background-image: url("https://img.freepik.com/premium-vector/city-seamless-pattern_100478-1292.jpg"), linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
     height: 100vh;
     display: grid;
     justify-content: center;
@@ -20,7 +19,6 @@ body {
     text-align: center;
     padding: 20px;
 }
-
 
 #text {
     background: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
@@ -42,7 +40,7 @@ img {
 }
 
 #video {
-    border: 3px solid white;
+    border: 10px solid white;
     border-radius: 5px;
     text-align: center;
     justify-content: center;
@@ -50,10 +48,12 @@ img {
     margin-right: auto;
     display: block;
     font-family: inherit;
+    height: auto;
+    width: auto;
 }
 
 #photo {
-    border: 3px solid white;
+    border: 10px solid white;
     border-radius: 5px;
     text-align: center;
     justify-content: center;
@@ -77,13 +77,15 @@ img {
     font-family: inherit;
     appearance: none;
     border: 0;
-    border-radius: 3px;
+    border-radius: 7px;
     background: #404653;
     color: #fff;
     padding: 8px 16px;
-    font-size: 1rem;
+    font-size: 2rem;
     cursor: pointer;
     text-align: center;
+    height: 65px;
+    width: 400px;
 }
 
 
@@ -95,12 +97,24 @@ img {
     font-family: inherit;
     appearance: none;
     border: 0;
-    border-radius: 3px;
+    border-radius: 7px;
     background: #404653;
     color: #fff;
     padding: 8px 16px;
-    font-size: 1rem;
+    font-size: 2rem;
     cursor: pointer;
+    height: 65px;
+    width: 400px;
+}
+
+#promo {
+      display: flex;
+  justify-content: center;
+}
+
+#result_taked_photo {
+    display: flex;
+  justify-content: center;
 }
 
 
