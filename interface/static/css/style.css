@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("http://127.0.0.1:8000/static/background.png"), linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    background-image: url("https://disk.yandex.ru/i/QyMwuOs5gu-JeQ"), linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
     background-attachment: fixed;
     height: 100vh;
     display: grid;
