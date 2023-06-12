@@ -4,9 +4,6 @@ from PIL import Image
 import numpy as np
 from matplotlib import pyplot as plt
 
-PATH = '/Users/d.s.zubov/Desktop/Курсовая работа/Код/MyDiploma/sheet/Resource'
-
-
 def compare_halves(arr, current_depth, max_depth):
     n = len(arr)
     if n == 1:
@@ -44,29 +41,31 @@ def levinshtein_distance(source_str, target_str):
             distance +=1
     return distance
 
+STATIC_PATH = './interface/static/'
 
-
-def model():
-    test_object = Image.open('/Users/d.s.zubov/Desktop/Курсовая/djangoProject/interface/static/test.jpg')
-    size_div_2 = 200
+def model(size, d, k, num_resp_imgs, database_name ):
+    test_object = Image.open(f'{STATIC_PATH}taked_photo.jpg')
+    size_div_2 = size
+    # предобработка
     image = test_object.convert('L')
     image_center = (image.size[0] // 2, image.size[1] // 2)
     crop_1 = (image_center[0] - size_div_2, image_center[1] - size_div_2, image_center[0] + size_div_2, image_center[1] + size_div_2)
     image = image.crop(crop_1)
-    img_array = compare_halves(matrix_to_array(image), current_depth=0, max_depth=11)
-    data = pd.read_csv('./interface/static/database_learn_200_11.csv', sep=';')
+    # работа модели
+    img_array = compare_halves(matrix_to_array(image), current_depth=0, max_depth=d)
+    data = pd.read_csv(f'{STATIC_PATH}{database_name}', sep=';')
 
     data['distance'] = data['array'].apply(
         lambda x: int(levinshtein_distance(str(img_array), str(x))))
     dataset_learn_sorted = data.sort_values(by='distance')
-    dataset_learn_sorted_grouped = dataset_learn_sorted[:50].groupby('style').count().sort_values(by='distance',
+    dataset_learn_sorted_grouped = dataset_learn_sorted[:k].groupby('style').count().sort_values(by='distance',
                                                                                                  ascending=False)
     style = dataset_learn_sorted_grouped.index[0]
 
     # data['distance'] = data["array"].apply(lambda x: levinshtein_distance(img_array, x))
     # sorted_data = data.sort_values(['distance'])
     # style = sorted_data[:50].groupby('style').count().sort_values(['distance'], ascending=False).index[0]
-    imgs = dataset_learn_sorted["path"][:12].apply(lambda s: 'files/'+s[9:])
+    imgs = dataset_learn_sorted["path"][:num_resp_imgs].apply(lambda s: 'files/'+s[9:])
     return style, imgs.tolist()
 
 #
