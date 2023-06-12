@@ -32,7 +32,6 @@
         canvas = document.getElementById("canvas");
         photo = document.getElementById("photo");
         startbutton = document.getElementById("startbutton");
-
         navigator.mediaDevices
             .getUserMedia({video: true, audio: false})
             .then((stream) => {
