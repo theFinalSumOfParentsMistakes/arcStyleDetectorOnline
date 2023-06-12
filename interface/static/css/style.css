@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url("https://marquette.macfound.org/img/home_building.png"), linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    background-image: url("http://127.0.0.1:8000/static/background.png"), linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
     background-attachment: fixed;
     height: 100vh;
     display: grid;
@@ -24,6 +24,20 @@ body {
 
 #title {
     margin-bottom: 20px;
+}
+
+#text {
+    background: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    width: 275px;
+    margin-right: auto;
+    min-width: 70px;
+    font-family: inherit;
+    appearance: none;
+    border: 0;
+    border-radius: 3px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 img {
@@ -66,7 +80,7 @@ blockquote {
     appearance: none;
     border: 0;
     border-radius: 3px;
-    background: #4676d7;
+    background: #404653;
     color: #fff;
     padding: 8px 16px;
     font-size: 1rem;
@@ -74,7 +88,7 @@ blockquote {
 }
 
 .button:hover {
-    background: #1d49aa;
+    background: #404653;
 }
 
 .button:focus {
@@ -91,7 +105,7 @@ blockquote {
     appearance: none;
     border: 0;
     border-radius: 3px;
-    background: #4676d7;
+    background: #404653;
     color: #fff;
     padding: 8px 16px;
     font-size: 1rem;
@@ -99,7 +113,7 @@ blockquote {
 }
 
 #startbutton:hover {
-    background: #1d49aa;
+    background: #404653;
 }
 
 #startbutton:focus {

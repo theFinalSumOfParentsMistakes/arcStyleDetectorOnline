@@ -59,7 +59,7 @@ def model():
     data['distance'] = data['array'].apply(
         lambda x: int(levinshtein_distance(str(img_array), str(x))))
     dataset_learn_sorted = data.sort_values(by='distance')
-    dataset_learn_sorted_grouped = dataset_learn_sorted[:20].groupby('style').count().sort_values(by='distance',
+    dataset_learn_sorted_grouped = dataset_learn_sorted[:50].groupby('style').count().sort_values(by='distance',
                                                                                                  ascending=False)
     style = dataset_learn_sorted_grouped.index[0]
 

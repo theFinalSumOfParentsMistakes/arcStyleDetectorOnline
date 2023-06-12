@@ -8,13 +8,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="HandheldFriendly" content="true">
         <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
-        <title>Стиль здания</title>
+        <title>ArcClassificator</title>
     </head>
     <body>
-    <p>Cтиль: {{ style }} </p>
+    <p id="text">Style: {{ style }} </p>
     <img src="{% static "/test.jpg" %}" alt="Italian Trulli">
     <br>
-    <p>Похожие изображения:</p>
+    <p id="text" >Похожие изображения:</p>
     <div class="images ">
         {% for item in images %}
             <img src="{% static item %}" alt="Italian Trulli" width="90" height="90">
