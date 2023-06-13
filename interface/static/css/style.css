@@ -4,13 +4,17 @@
 }
 
 body {
-    background-image: url("https://web.telegram.org/k/assets/img/pattern.svg"), linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.76)), url("https://previews.123rf.com/images/franzidraws/franzidraws1604/franzidraws160400049/55801444-hand-drawn-seamless-pattern-of-italian-style-houses.jpg");
+    background-position: center center;
+    background-size: cover;
     height: 75vh;
     display: grid;
     justify-content: center;
     align-content: center;
     grid-template-columns: minmax(150px, 440px);
     font-family: 'Montserrat', sans-serif;
+    max-height: 100vh;
+    max-width: 100vh;
 }
 
 #wrapper {
@@ -19,7 +23,7 @@ body {
 }
 
 #text {
-    background: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    background: white;
     width: 275px;
     margin-right: auto;
     min-width: 70px;
@@ -34,7 +38,7 @@ body {
 }
 
 #text1 {
-    background: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.76)) ;
     width: 275px;
     margin-right: auto;
     min-width: 70px;
@@ -88,6 +92,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     min-width: auto;
+    min-height: auto;
     font-family: inherit;
     appearance: none;
     border: 0;
@@ -98,7 +103,6 @@ img {
     font-size: 2rem;
     cursor: pointer;
     text-align: center;
-    height: 65px;
     width: 400px;
 }
 
@@ -117,7 +121,8 @@ img {
     padding: 8px 16px;
     font-size: 2rem;
     cursor: pointer;
-    height: 65px;
+    min-width: auto;
+    min-height: auto;
     width: 400px;
 }
 
