@@ -18,7 +18,8 @@ def image_upload(request):
             binary_file.write(urlopen(image_path).read())
         pred = model(size=200, d=11, k=50, num_resp_imgs=8, database_name="database_learn_200_11.csv")
         context['style'] = pred[0]
-        context['images'] = pred[1]
+        context['images1'] = pred[1][:4]
+        context['images2'] = pred[1][4:]
         # image = NamedTemporaryFile()
         # image.write(urlopen(image_path).read())
         # image.flush()

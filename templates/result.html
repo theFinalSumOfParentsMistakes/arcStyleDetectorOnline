@@ -23,12 +23,18 @@
         It's: {{ style }} <br>
         Similarity images:
     </p>
-    <div class="images" id="result_images">
-        {% for item in images %}
-            <img src="{% static item %}" alt="Italian Trulli" width="90" height="90">
+    <div class="images" id="result_images1">
+        {% for item in images1 %}
+            <img src="{% static item %}" alt="Italian Trulli" width="50" height="50">
 
         {% endfor %}
     </div>
+        <div class="images" id="result_images2">
+        {% for item in images2 %}
+            <img src="{% static item %}" alt="Italian Trulli" width="50" height="50">
+
+        {% endfor %}
+        </div>
     <br>
     <br>
     <div id="promo">
