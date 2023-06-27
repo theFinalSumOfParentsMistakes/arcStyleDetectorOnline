@@ -60,13 +60,14 @@ def model(size, d, k, num_resp_imgs, database_name ):
     dataset_learn_sorted = data.sort_values(by='distance')
     dataset_learn_sorted_grouped = dataset_learn_sorted[:k].groupby('style').count().sort_values(by='distance',
                                                                                                  ascending=False)
-    style = dataset_learn_sorted_grouped.index[0]
+    style1 = dataset_learn_sorted_grouped.index[0]
+    style2 = dataset_learn_sorted_grouped.index[1]
 
     # data['distance'] = data["array"].apply(lambda x: levinshtein_distance(img_array, x))
     # sorted_data = data.sort_values(['distance'])
     # style = sorted_data[:50].groupby('style').count().sort_values(['distance'], ascending=False).index[0]
     imgs = dataset_learn_sorted["path"][:num_resp_imgs].apply(lambda s: 'files/'+s[9:])
-    return style, imgs.tolist()
+    return style1,style2 , imgs.tolist()
 
 #
 # s = './data_d/Russian Revival/Russian_Revival_19.jpg'
